@@ -1,0 +1,27 @@
+{
+    "name": "nirvarnia/apiview",
+    "type": "library",
+    "description": "A simple interface for writing HTTP API responses that are consistent with the apiview.org standard.",
+    "keywords": ["api", "http", "restful"],
+    "homepage": "https://github.com/nirvarnia/apiview",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kieran Potts",
+            "email": "hello@kieranpotts.com",
+            "homepage": "https://www.kieranpotts.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "nirvarnia/exceptions": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.3",
+        "codacy/coverage": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {"Nirvarnia\\ApiView\\": "src/Nirvarnia/ApiView/"}
+    }
+}

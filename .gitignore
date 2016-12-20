@@ -1,0 +1,14 @@
+# Exclude ApiGen output, temporary files, and dependencies:
+
+/apigen
+/tmp
+/vendor
+
+# Exclude these common system files:
+
+Thumbs.db
+.DS_Store
+.cvs
+.svn
+*.bak
+*.swp

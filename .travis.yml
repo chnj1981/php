@@ -1,0 +1,44 @@
+language: php
+
+sudo: false
+
+cache:
+  directories:
+  - $HOME/.composer/cache
+
+matrix:
+  include:
+    - php: 7.0
+    - php: 7.1
+    - php: nightly
+    - php: hhvm-stable
+      env: PHP7MODE="yes"
+      sudo: required
+      dist: trusty
+      group: edge
+  allow_failures:
+    - php: hhvm-stable
+    - php: nightly
+  fast_finish: true
+
+before_install:
+  - if [[ $PHP7MODE == "yes" ]]; then
+      echo hhvm.php7.all=1 >> /etc/hhvm/php.ini;
+    fi
+
+install:
+  - composer self-update
+  - composer install --prefer-source --no-interaction
+
+script:
+  - vendor/bin/phpunit
+
+branches:
+  only:
+    - master
+
+git:
+  depth: 5
+
+notifications:
+  email: false
